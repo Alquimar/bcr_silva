@@ -42,7 +42,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres:///bcr_silva")
+    "default": env.db("DATABASE_URL", default="postgres://bcr_silva:bcr_silva@localhost:5432/bcr_silva")
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
@@ -75,6 +75,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "bcr_silva.users.apps.UsersConfig",
+    "bcr_silva.core.apps.CoreConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
